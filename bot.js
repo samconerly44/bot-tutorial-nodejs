@@ -118,7 +118,7 @@ function postMessageThree() {
     'text': botResponse,
     'attachments': [{
       'type': 'image',
-      'url': "https://drive.google.com/file/d/1MYFrdhiKgP-OEd9kCxBbvPrQzy50O9BM/view?usp=sharing"
+      'url': "https://imgur.com/a/NdE9srS"
     }]
   };
 
