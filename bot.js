@@ -70,7 +70,7 @@ function postMessage() {
 function postMessagetwo() {
   var botResponse, options, body, botReq;
 
-  botResponse = "Hey Kevin";
+  botResponse = "😹😹😹";
 
   options = {
     hostname: 'api.groupme.com',
