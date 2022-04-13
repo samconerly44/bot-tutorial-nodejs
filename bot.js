@@ -15,10 +15,10 @@ function respond() {
   botRegex = /^\/cool guy$/;
   legacyRegex = /legacy/
 
-  if (request.text && request.user_id != "17996985" && request.user_id != "30961081"){
-    if(request.text && botRegex.test(request.text)) {
+  if ((request.text) && (request.user_id != "17996985") && (request.user_id != "30961081")){
+    if (request.text && botRegex.test(request.text)) {
       this.res.writeHead(200);
-      postMessage();
+      postMessage(); 
       this.res.end();
     } else if(request.text && legacyRegex.test(request.text)) {
       this.res.writeHead(200);
