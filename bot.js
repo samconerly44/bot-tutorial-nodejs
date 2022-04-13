@@ -15,7 +15,7 @@ function respond() {
   botRegex = /^\/cool guy$/;
   penisRegex = /penis/
 
-  if (request.text && request.user_id != "17996985" && request.user_id != "30961081"){
+  if (request.text && request.user_id != "39771174" && request.user_id != "33018824"){
     if (request.text && botRegex.test(request.text)) {
       this.res.writeHead(200);
       postMessage(); 
@@ -29,11 +29,11 @@ function respond() {
       this.res.writeHead(200);
       this.res.end();
     }
-  } else if (request.user_id === "17996985") {
+  } else if (request.user_id === "39771174") {
    this.res.writeHead(200);
    postMessagetwo();
    this.res.end();  
-  } else if (request.user_id === "30961081"){
+  } else if (request.user_id === "33018824"){
    this.res.writeHead(200);
    postMessageFour();
    this.res.end(); 
