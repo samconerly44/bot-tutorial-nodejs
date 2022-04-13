@@ -15,7 +15,7 @@ function respond() {
   botRegex = /^\/cool guy$/;
   legacyRegex = /legacy/
 
-  if (request.text && request.user_id != "17996985"){
+  if (request.text && request.user_id != "17996985" && request.user_id != "30961081"){
     if(request.text && botRegex.test(request.text)) {
       this.res.writeHead(200);
       postMessage();
@@ -29,12 +29,18 @@ function respond() {
       this.res.writeHead(200);
       this.res.end();
     }
-  }
-  else {
+  } else if (request.user_id === "17996985") {
    this.res.writeHead(200);
    postMessagetwo();
    this.res.end();  
- }
+ } else if (request.user_id === "30961081"){
+   this.res.writeHead(200);
+   postMessageFour();
+   this.res.end(); 
+ } else {
+  console.log("don't care");
+  this.res.writeHead(200);
+  this.res.end();
 }
 
 function postMessage() {
@@ -145,5 +151,42 @@ function postMessageThree() {
   });
   botReq.end(JSON.stringify(body));
 }
+
+function postMessageFour() {
+  var botResponse, options, body, botReq;
+
+  botResponse = "Hi Bob";
+
+  options = {
+    hostname: 'api.groupme.com',
+    path: '/v3/bots/post',
+    method: 'POST'
+  };
+
+  body = {
+    "bot_id" : botID,
+    "text" : botResponse
+  };
+
+  console.log('sending ' + botResponse + ' to ' + botID);
+
+  botReq = HTTPS.request(options, function(res) {
+      if(res.statusCode == 202) {
+        //neat
+      } else {
+        console.log('rejecting bad status code ' + res.statusCode);
+      }
+  });
+
+  botReq.on('error', function(err) {
+    console.log('error posting message '  + JSON.stringify(err));
+  });
+  botReq.on('timeout', function(err) {
+    console.log('timeout posting message '  + JSON.stringify(err));
+  });
+  botReq.end(JSON.stringify(body));
+}
+
+
 
 exports.respond = respond;
