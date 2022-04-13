@@ -15,32 +15,34 @@ function respond() {
   botRegex = /^\/cool guy$/;
   legacyRegex = /legacy/
 
-  if (request.text && request.user_id != "17996985"){
-    if(request.text && botRegex.test(request.text)) {
-      this.res.writeHead(200);
-      postMessage();
-      this.res.end();
-    } else if(request.text && legacyRegex.test(request.text)) {
-      this.res.writeHead(200);
-      postMessageThree();
-      this.res.end();
-    } else {
-      console.log("don't care");
-      this.res.writeHead(200);
-      this.res.end();
-    }
-  }
-  else {
+  if (request.text && request.user_id === "17996985"){
    this.res.writeHead(200);
    postMessagetwo();
    this.res.end();  
- }
+ } else if(request.text && botRegex.test(request.text)) {
+  this.res.writeHead(200);
+  postMessage();
+  this.res.end();
+} else if(request.text && legacyRegex.test(request.text)) {
+  this.res.writeHead(200);
+  postMessageThree();
+  this.res.end();
+} else {
+  console.log("don't care");
+  this.res.writeHead(200);
+  this.res.end();
+}
+}
+else {
+ this.res.writeHead(200);
+ postMessagetwo();
+ this.res.end();  
 }
 
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = "";
+  botResponse = "work";
 
   options = {
     hostname: 'api.groupme.com',
