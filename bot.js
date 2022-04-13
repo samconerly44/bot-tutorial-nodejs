@@ -118,7 +118,7 @@ function postMessageThree() {
     'text': botResponse,
     'attachments': [{
       'type': 'image',
-      'url': "https://imgur.com/a/NdE9srS"
+      'url': "file:///Users/charlesconerly/Desktop/pc19.jpg"
     }]
   };
 
