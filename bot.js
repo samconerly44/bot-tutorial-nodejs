@@ -27,7 +27,7 @@ function respond() {
   }
   else {
    this.res.writeHead(200);
-   postMessagetwo(bartroast());
+   postMessagetwo();
    this.res.end();  
  }
 }
