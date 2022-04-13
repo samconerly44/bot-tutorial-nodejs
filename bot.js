@@ -13,14 +13,14 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
   botRegex = /^\/cool guy$/;
-  legacyRegex = /legacy/
+  penisRegex = /penis/
 
   if (request.text && request.user_id != "17996985" && request.user_id != "30961081"){
     if (request.text && botRegex.test(request.text)) {
       this.res.writeHead(200);
       postMessage(); 
       this.res.end();
-    } else if(request.text && legacyRegex.test(request.text)) {
+    } else if(request.text && penisRegex.test(request.text)) {
       this.res.writeHead(200);
       postMessageThree();
       this.res.end();
@@ -47,7 +47,7 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = "work";
+  botResponse = "Schunk";
 
   options = {
     hostname: 'api.groupme.com',
@@ -130,7 +130,7 @@ function postMessageThree() {
     'text': botResponse,
     'attachments': [{
       'type': 'image',
-      'url': "https://i.groupme.com/1774x966.jpeg.2d0ff6f92c7041fe9626500563d09445"
+      'url': "https://i.groupme.com/1122x2208.jpeg.ddc0c5af2edb494d9b3d8b358c28d9e6"
     }]
   };
 
@@ -156,7 +156,7 @@ function postMessageThree() {
 function postMessageFour() {
   var botResponse, options, body, botReq;
 
-  botResponse = "Hi Bob";
+  botResponse = " ";
 
   options = {
     hostname: 'api.groupme.com',
@@ -165,8 +165,12 @@ function postMessageFour() {
   };
 
   body = {
-    "bot_id" : botID,
-    "text" : botResponse
+    'bot_id': botID,
+    'text': botResponse,
+    'attachments': [{
+      'type': 'image',
+      'url': "https://i.groupme.com/1774x966.jpeg.2d0ff6f92c7041fe9626500563d09445"
+    }]
   };
 
   console.log('sending ' + botResponse + ' to ' + botID);
