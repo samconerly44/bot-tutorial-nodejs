@@ -118,7 +118,7 @@ function postMessageThree() {
     'text': botResponse,
     'attachments': [{
       'type': 'image',
-      'url': "file:///Users/charlesconerly/Desktop/pc19.jpg"
+      'url': "https://i.groupme.com/1122x2208.jpeg.ddc0c5af2edb494d9b3d8b358c28d9e6"
     }]
   };
 
